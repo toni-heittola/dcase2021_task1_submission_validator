@@ -232,7 +232,7 @@ def validate_meta_data(meta, task_label, param):
             print_error('meta', '\'system.complexity.total_parameters\' value not a number')
             error_count += 1
 
-        if 'external_datasets' in meta['system']:
+        if 'external_datasets' in meta['system'] and meta['system']['external_datasets']:
             for item in meta['system']['external_datasets']:
                 if check_fields(item, param['system']['external_datasets']['required_fields']):
                     print_error('meta', [
